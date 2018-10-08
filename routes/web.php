@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+/*
+ * Admin Routes
+ */
+Route::name('admin')->group(function () {
+    Route::get('/login', 'App/Http/Controller/Admin/LoginController');
+});
+
+/*
+ * Users Routes
+ */
+Route::name('users')->group(function () {
+
 });
