@@ -11,6 +11,10 @@
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('index');
 });
@@ -19,7 +23,7 @@ Route::get('/', function () {
  * Admin Routes
  */
 Route::name('admin')->group(function () {
-    Route::get('/login', 'App/Http/Controller/Admin/LoginController');
+   // Route::get('/login', 'App/Http/Controller/Admin/LoginController.');
 });
 
 /*
