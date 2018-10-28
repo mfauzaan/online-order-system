@@ -38,11 +38,11 @@
     @auth
       @include('shared.navbar')
     @endauth
-
+    
     <div class="page-container">
       @section('content-wrapper')
         <!-- START PAGE CONTENT WRAPPER -->
-        <div class="page-content-wrapper ">
+        <div class="page-content-wrapper">
           @yield('content')
           @include('shared.copyright')
         </div>

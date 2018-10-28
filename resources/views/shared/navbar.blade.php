@@ -150,7 +150,8 @@
             <a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
             <a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
             <a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
-            <a href="#" class="clearfix bg-master-lighter dropdown-item">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            <a href="{{ route('logout') }}" class="clearfix bg-master-lighter dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               <span class="pull-left">Logout</span>
               <span class="pull-right"><i class="pg-power"></i></span>
             </a>
@@ -178,5 +179,6 @@
       </ul>
       <a href="#" class="search-link d-flex justify-content-between align-items-center hidden-lg-up" data-toggle="search">Tap here to search <i class="pg-search float-right"></i></a>
     </div>
+    @include('shared.header')
   </div>
 </div>
