@@ -30,10 +30,11 @@
       <div class="d-none d-sm-block ml-auto">
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item dropdown">
-              <a class="nav-link nav-link-icon" href="{{ route('logout') }}"
+              <a class="nav-link nav-link-icon" href="{{ route('logout') }}" 
                   onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                  {{ __('Logout') }}<i class="ni ni-button-power"></i>
+                  document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                <i class="ni ni-button-power"></i>
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -59,7 +60,7 @@
           <!-- Show links for all groups -->
           <div class="ct-toc-item active">
             <ul class="nav ct-sidenav">
-                <li href="/logs" class="active ct-sidenav-active"> <a href="/logs">Dashboard</a></li>
+                <li href="/logs" class="active ct-sidenav-active"><a href="/merchant/dashboard">Dashboard</a></li>
             </ul>
           </div>
 
