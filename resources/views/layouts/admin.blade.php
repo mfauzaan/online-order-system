@@ -3,19 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Payer Pvt Ltd">
+  <meta name="author" content="Online Order System">
 
-  <title>Online Order System</title>
-  <!-- Extra details for Live View on GitHub Pages -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <!-- End Google Tag Manager -->
+  <title>Online Order System</title> 
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/img/favicon.png" sizes="16x16">
+  <link rel="mask-icon" href="/img/oos-logo-white.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
   <link href="/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="/css/argon.min.css" rel="stylesheet">
+  <link type="text/css" href="/css/argon.css" rel="stylesheet">
   <!-- Docs CSS -->
   <link type="text/css" href="/css/docs.min.css" rel="stylesheet">
 </head>

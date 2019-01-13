@@ -15,11 +15,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('merchant_id')->unique();
-            $table->integer('customer_id')->unique();
+            $table->integer('merchant_id')->unsigned()->references('id')->on('merchants');
+            $table->integer('customer_id')->unsigned()->references('id')->on('customers');
+            $table->integer('item_id')->unsigned()->references('id')->on('items');
             $table->string('status');
             $table->float('total_price');
-            $table->float('cash_balance');
+            $table->float('balance');
             $table->string('delivery_type');
             $table->string('payment_type');
             $table->timestamps();

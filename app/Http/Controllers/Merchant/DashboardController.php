@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Merchant;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Order;
+use App\Customer;
 class DashboardController extends Controller
 {
     /**
@@ -24,6 +25,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('merchant.dashboard.index');
+        // Query Required Datasets for Dashboard
+        $orders = Order::orderBy('id', 'desc')->limit(10)->with('item')->get();
+        $customers = Customer::orderBy('id', 'desc')->limit(10)->get();
+
+        return view('merchant.dashboard.index', compact('orders', 'customers'));
     }
 }

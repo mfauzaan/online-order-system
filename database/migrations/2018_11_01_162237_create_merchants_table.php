@@ -15,7 +15,7 @@ class CreateMerchantsTable extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unique();
+            $table->integer('user_id')->unsigned()->references('id')->on('users');
             $table->string('name');
             $table->integer('mobile_number');
             $table->string('address');

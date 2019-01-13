@@ -44,7 +44,7 @@
     </div>
     <div class="row mt-3">
       <div class="col-6">
-        <a href="https://payer.mv/" class="text-light">
+        <a href="https://oos.com/" class="text-light">
           <small>© 2018 Online Order System.</small>
         </a>
         <small></small>
