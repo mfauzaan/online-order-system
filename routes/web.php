@@ -13,8 +13,6 @@
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', function () {
     return 'This is Index Page';
@@ -23,8 +21,9 @@ Route::get('/', function () {
 /*
  * Admin Routes
  */
-Route::name('admin')->group(function () {
-   // Route::get('/login', 'App/Http/Controller/Admin/LoginController.');
+Route::prefix('merchant')->namespace('Merchant')->group(function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::resource('items', 'ItemController');
 });
 
 /*

@@ -136,7 +136,7 @@
       <div class="d-flex align-items-center">
         <!-- START User Info-->
         <div class="pull-left p-r-10 fs-14 font-heading hidden-md-down">
-          <span class="semi-bold">User</span>
+          <span class="semi-bold">{{ auth()->user()->username }}</span>
         </div>
         <div class="dropdown pull-right sm-m-r-5">
           <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
@@ -170,14 +170,6 @@
       <h2 class="page-title align-self-end">
         dashboard
       </h2>
-    </div>
-    <div class="menu-bar header-sm-height" data-pages-init='horizontal-menu' data-hide-extra-li="4">
-      <a href="#" class="btn-link toggle-sidebar hidden-lg-up pg pg-close" data-toggle="horizontal-menu">
-      </a>
-      <ul>
-
-      </ul>
-      <a href="#" class="search-link d-flex justify-content-between align-items-center hidden-lg-up" data-toggle="search">Tap here to search <i class="pg-search float-right"></i></a>
     </div>
     @include('shared.header')
   </div>

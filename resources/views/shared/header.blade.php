@@ -3,10 +3,10 @@
   </a>
   <ul>
     <li class=" active">
-      <a href="index.html">Dashboard</a>
+      <a href="{{ route('dashboard') }}">Dashboard</a>
     </li>
     <li>
-      <a href="social.html"><span class="title">Social</span></a>
+      <a href="{{ route('items.index') }}"><span class="title">Items</span></a>
     </li>
     <li>
       <a href="javascript:;"><span class="title">Calendar</span>
