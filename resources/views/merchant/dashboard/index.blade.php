@@ -22,17 +22,17 @@
 <div class="row col-12 mb-3 header-body">
   <div class="col-sm">
     <h1>Total Sales</h1>
-    <h3>MVR 756268.38</h3>
+    <h3>{{ (isset($total_sales) ? $total_sales : 0) }} .ރ</h3>
   </div>
 
   <div class="col-sm">
     <h1>Total Order</h1>
-    <h3>9292</h3>
+    <h3>{{ (isset($orders_count) ? $orders_count : 0) }}</h3>
   </div>
 
   <div class="col-sm">
-    <h1>Users</h1>
-    <h3>2726</h3>
+    <h1>Customers</h1>
+    <h3>{{ (isset($customers_count) ? $customers_count : 0) }}</h3>
   </div>
 </div>
 
@@ -80,6 +80,7 @@
         </div>
       </div>
     </div>
+
     <div class="row mt-5">
       <div class="col-xl-8 mb-5 mb-xl-0">
         <div class="card shadow">
@@ -148,7 +149,7 @@
           <div class="card-header border-0">
             <div class="row align-items-center">
               <div class="col">
-                <h3 class="mb-0">Users</h3>
+                <h3 class="mb-0">Customers</h3>
               </div>
               <div class="col text-right">
                 <a href="/merchant/products/" class="btn btn-sm btn-primary">See all</a>
@@ -162,16 +163,20 @@
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Mobile Number</th>
-                  <th scope="col"></th>
+                  <th scope="col">Name</th>
                 </tr>
               </thead>
               <tbody>
+                @forelse ($customers as $customer)
                 <tr>
                   <th scope="row">
-                    Google Play
+                  {{ $customer->id }}
                   </th>
                   <td>
-                  $30 (US)
+                  {{ $customer->mobile_number }}
+                  </td>
+                  <td>
+                  {{ $customer->full_name }}
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
@@ -183,7 +188,14 @@
                         </a>
                     </div>
                   </td>
-                </tr>
+                </tr> 
+                @empty
+                  <tr>
+                    <th scope="row" colspan="6">
+                      Oops! There are no Customers.
+                    </th>
+                  </tr>
+                @endforelse
               </tbody>
             </table>
           </div>
@@ -250,14 +262,6 @@
 </div>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
-          <div class="copyright text-center text-xl-left text-muted">
-            © 2018 <a href="https://oos.com" class="font-weight-bold ml-1" target="_blank">Online Order System.</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    </div>
+@include('shared.footer')
+</div>
 @endsection

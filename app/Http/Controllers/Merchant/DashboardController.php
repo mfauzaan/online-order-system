@@ -26,9 +26,12 @@ class DashboardController extends Controller
     public function index()
     {
         // Query Required Datasets for Dashboard
-        $orders = Order::orderBy('id', 'desc')->limit(10)->with('item')->get();
-        $customers = Customer::orderBy('id', 'desc')->limit(10)->get();
+        $orders = Order::orderBy('id', 'desc')->limit(15)->with('item')->get();
+        $customers = Customer::orderBy('id', 'desc')->limit(15)->get();
+        $customers_count = Customer::count();
+        $orders_count = Order::count();
+        $total_sales = Order::sum('total_price');
 
-        return view('merchant.dashboard.index', compact('orders', 'customers'));
+        return view('merchant.dashboard.index', compact('orders', 'customers', '$customers_count', 'orders_count', 'total_sales'));
     }
 }
