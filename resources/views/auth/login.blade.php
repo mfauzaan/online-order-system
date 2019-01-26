@@ -38,7 +38,6 @@
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary my-4">Login</button>
-            <a class="btn btn-success my-4" href="{{ route('register') }}">Register</a>
           </div>
         </form>
       </div>
@@ -48,8 +47,10 @@
         <a href="https://oos.com/" class="text-light">
           <small>© 2018 Online Order System.</small>
         </a>
-        <small></small>
       </div>
+      <div class="col-6 text-right">
+          <a class="text-light" href="{{ route('register') }}"><small>Create new account</small></a>
+        </div>
     </div>
   </div>
   </div>
