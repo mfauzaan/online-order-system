@@ -57,7 +57,7 @@
                         {{ Form::label('Feature Image',null, ['class' => 'form-control-label']) }} 
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input"  name="featured_image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <input type="file" class="custom-file-input"  name="featured_image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" required>
                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>
                         </div>

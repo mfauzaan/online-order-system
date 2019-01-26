@@ -54,7 +54,7 @@
         </table>
       </div>
       <div class="card-footer py-4">
-          {{ $items->links() }}
+          {{ $orders->links() }}
       </div>
     </div>
   </div>
