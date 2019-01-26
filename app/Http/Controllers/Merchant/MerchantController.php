@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Merchant;
 
 use App\Merchant;
+use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MerchantController extends Controller
 {
@@ -14,7 +17,8 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        //
+        $merchants = Merchant::paginate(15);
+        return view('merchant.merchants.index', compact('merchants'));
     }
 
     /**
@@ -24,7 +28,7 @@ class MerchantController extends Controller
      */
     public function create()
     {
-        //
+        return view('merchant.merchants.create');
     }
 
     /**
@@ -35,7 +39,25 @@ class MerchantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        try {
+            // Create User
+            $user = new User;
+            $user->username = str_slug($request->name);
+            $user->type = 'Merchant';
+            $user->password = $request->name;
+            $user->email = $request->email;
+            $user->save();
+
+            // Create Merchant
+            $user->merchant()->create($request->all());
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect(route('merchants.index'))->with('Something Went Wrong');
+        }
+      
+        return redirect(route('merchants.index'));
     }
 
     /**
@@ -57,7 +79,8 @@ class MerchantController extends Controller
      */
     public function edit(Merchant $merchant)
     {
-        //
+        $merchant->load('user');
+        return view('merchant.merchants.edit', compact('merchant'));
     }
 
     /**
@@ -69,7 +92,8 @@ class MerchantController extends Controller
      */
     public function update(Request $request, Merchant $merchant)
     {
-        //
+        $merchant->update($request->all());        
+        return redirect(route('merchants.index'));
     }
 
     /**
@@ -80,6 +104,7 @@ class MerchantController extends Controller
      */
     public function destroy(Merchant $merchant)
     {
-        //
+        $merchant->delete();
+        return redirect(route('merchants.index'));
     }
 }

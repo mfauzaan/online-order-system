@@ -19,12 +19,21 @@ Route::get('/', function () {
 });
 
 /*
- * Admin Routes
+ * Merchant Routes
  */
 Route::prefix('merchant')->namespace('Merchant')->group(function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('items', 'ItemController');
 });
+
+/*
+ * Admin Routes
+ */
+
+Route::prefix('admin')->namespace('Merchant')->group(function () {
+    Route::resource('merchants', 'MerchantController');
+});
+
 
 /*
  * Users Routes

@@ -70,17 +70,9 @@
 
           <!-- Show links for all groups -->
           <div class="ct-toc-item active">
-            <a class="ct-toc-link">Service Logs</a>
-            <ul class="nav ct-sidenav">
-              <li href="/logs" class=""> <a href="/logs">Logs</a></li>
-            </ul>
-          </div>
-
-          <!-- Show links for all groups -->
-          <div class="ct-toc-item active">
             <a class="ct-toc-link">Managment</a>
             <ul class="nav ct-sidenav">
-              
+              <li href="/logs" class="ct-sidenav-active"><a href="/admin/merchants">Merchants</a></li>
             </ul>
           </div>
 
@@ -105,6 +97,7 @@
   <script src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
   <!-- Argon JS -->
   <script src="/js/argon.min.js?v=1.0.1"></script>
+  <script src="/js/oos.js"></script>
 </body>
 
 </html>
