@@ -57,7 +57,7 @@ class MerchantController extends Controller
             return redirect(route('merchants.index'))->with('Something Went Wrong');
         }
       
-        return redirect(route('merchants.index'));
+        return redirect(route('merchant.merchants.index'));
     }
 
     /**
@@ -93,7 +93,7 @@ class MerchantController extends Controller
     public function update(Request $request, Merchant $merchant)
     {
         $merchant->update($request->all());        
-        return redirect(route('merchants.index'));
+        return redirect(route('merchant.merchants.index'));
     }
 
     /**
@@ -105,6 +105,6 @@ class MerchantController extends Controller
     public function destroy(Merchant $merchant)
     {
         $merchant->delete();
-        return redirect(route('merchants.index'));
+        return redirect(route('merchant.merchants.index'));
     }
 }

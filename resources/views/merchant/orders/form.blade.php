@@ -26,6 +26,6 @@
 
 <div class="card-footer py-4 bg-secondary">
     {{ Form::submit('Save Changes', ['class' => 'btn btn-success']) }}
-    <a href="{{ route('merchant.merchants.index') }}" class="btn btn-danger">Cancel</a>
+    <a href="{{ route('merchant.orders.index') }}" class="btn btn-danger">Cancel</a>
 </div>
 {{ Form::close() }}

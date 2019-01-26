@@ -73,7 +73,7 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $order->update($request->all());
-        return redirect(route('orders.index'));
+        return redirect(route('merchant.orders.index'));
     }
 
     /**

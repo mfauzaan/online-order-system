@@ -18,7 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/dashboard');
+            if(Auth::user()->type == 'User'){
+                return redirect(route('restaurants'));
+            } else {
+                return redirect(route('merchant.dashboard'));
+            } 
         }
 
         return $next($request);

@@ -15,7 +15,7 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return 'This is Index Page';
+    return redirect(route('login'));
 });
 
 /*
