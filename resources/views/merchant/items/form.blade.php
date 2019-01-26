@@ -39,7 +39,37 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @if (isset($item->featured_image))
+                    <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ $item->featured_image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    </div>
+                    @endif
+                    <div class="form-group focused">
+                        {{ Form::label('Feature Image',null, ['class' => 'form-control-label']) }} 
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input"  name="featured_image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
     </div>
+
+
     <hr class="my-4">
     <!-- Address -->
     <div class="pl-lg-4">

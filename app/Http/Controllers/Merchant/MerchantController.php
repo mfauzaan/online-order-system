@@ -45,7 +45,7 @@ class MerchantController extends Controller
             $user = new User;
             $user->username = str_slug($request->name);
             $user->type = 'Merchant';
-            $user->password = $request->name;
+            $user->password = bcrypt($request->name);
             $user->email = $request->email;
             $user->save();
 

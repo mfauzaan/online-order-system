@@ -49,8 +49,13 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        // Store Image
+        $file = $request->file('featured_image');
+        $file = $file->move(public_path('uploads'), $file->getClientOriginalName());
+
+        // Create Item
         $merchant = Merchant::where('user_id', Auth::user()->id)->first();
-        $merchant->items()->create($request->all());
+        $merchant->items()->create($request->except(['featured_image'])+['featured_image' => "/uploads/{$file->getFileName()}"]);
         return redirect(route('items.index'));
     }
 
