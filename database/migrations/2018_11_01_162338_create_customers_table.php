@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
             $table->integer('mobile_number');
             $table->string('address');
             $table->string('street_address');
-            $table->integer('apartment_number');
+            $table->string('apartment_number');
             $table->string('city');
             $table->string('geo_coordinates');
             $table->timestamps();
