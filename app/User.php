@@ -32,4 +32,8 @@ class User extends Authenticatable
     public function merchant() {
         return $this->hasOne('App\Merchant');
     }
+
+    public function customer() {
+        return $this->hasOne('App\Customer');
+    }
 }
