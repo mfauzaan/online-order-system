@@ -191,62 +191,6 @@
       </div>
     </div>
     
-  <!-- Modal -->
-  <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="transactionModalLabel">Transaction Receipt</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body card bg-secondary shadow border-0" id="transaction_data">
-            <div class="card-header bg-transparent">
-              <div class="text-muted text-center mt-1"><h2>-</h2></div>
-              <div class="text-muted text-center mt-1"><p class="lead m-0">-</p></div>
-              <div class="text-muted text-center mt-1"><h2 class=" pl-4">-</h2></div>
-              <div class="text-muted text-center mt-1"><span class="badge  p-3"></span></div>
-            </div>
-            <div class="card-body pb-0 card-header bg-transparent">
-              <div class="row">
-                <div class="col">
-                  <label class="form-control-label" for="input-username">Paid On</label>
-                  <p>-</p>
-                </div>
-                <div class="col text-right">
-                    <label class="form-control-label" for="input-email">Refernce</label>
-                    <p>-</p>
-                </div>
-                <div class="w-100"></div>
-                
-                <div class="w-100"></div>
-                <div class="col">
-                    <label class="form-control-label" for="input-first-name">Payment Device</label>
-                    <p>-</p>
-                </div>
-                <div class="col text-right">
-                    <label class="form-control-label" for="input-last-name">Paid with</label>
-                    <p>-</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-body pb-0 pt-3">
-              <div class="row align-items-center">
-                <div class="col">
-                  <label class="form-control-label" for="input-first-name">Paid By</label>
-                  <p>-</p>
-                </div>
-                <div class="col">
-                  <div class="focused text-right">
-                    <a href="{{ route('orders.show', $order) }}" class="btn btn-primary ">View Profile</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-  </div>
 </div>
 
     <!-- Footer -->
