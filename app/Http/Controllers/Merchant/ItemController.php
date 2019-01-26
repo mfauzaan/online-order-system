@@ -90,7 +90,14 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        $item->update($request->all());
+        // Store Image
+        $file = $request->file('featured_image');
+        if ($file !== null) {
+            $file = $file->move(public_path('uploads'), $file->getClientOriginalName());
+            $item->update($request->except(['featured_image'])+['featured_image' => "/uploads/{$file->getFileName()}"]);
+        } else {
+            $item->update($request->except(['featured_image']));
+        }
 
         return redirect(route('items.index'));
     }

@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      {{ Form::model($item, ['route' => ['items.update', $item]]) }}
+      {{ Form::model($item, ['route' => ['items.update', $item], 'enctype' => 'multipart/form-data']) }}
       {{ method_field('PATCH') }}
         @include('merchant.items.form')
       {{ Form::close() }}

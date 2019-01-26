@@ -8,6 +8,8 @@
   <title>Online Order System</title> 
 
   <!-- Favicons -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png">
   <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/img/favicon.png" sizes="16x16">
@@ -75,6 +77,7 @@
               <li href="/logs" class="ct-sidenav-active {{ Request::is('admin/merchants*') ? 'active' : '' }}"><a href="/admin/merchants">Merchants</a></li>
               <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}">Items</a></li>
               <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/orders*') ? 'active' : '' }}"><a href="{{ route('orders.index') }}">Orders</a></li>
+              <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/customers*') ? 'active' : '' }}"><a href="{{ route('customers.index') }}">Customers</a></li>
             </ul>
           </div>
 
@@ -94,11 +97,13 @@
   <script src="/vendor/bootstrap/bootstrap.min.js"></script>
   <script src="/vendor/headroom/headroom.min.js"></script>
   <!-- Optional JS -->
+  <script src="/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/vendor/chart.js/dist/Chart.extension.js"></script>
   <script src="/vendor/onscreen/onscreen.min.js"></script>
   <script src="/vendor/nouislider/js/nouislider.min.js"></script>
   <script src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
   <!-- Argon JS -->
-  <script src="/js/argon.min.js?v=1.0.1"></script>
+  <script src="/js/argon.js?v=1.0.1"></script>
   <script src="/js/oos.js"></script>
 </body>
 
