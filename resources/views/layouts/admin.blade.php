@@ -64,15 +64,15 @@
           <!-- Show links for all groups -->
           <div class="ct-toc-item active">
             <ul class="nav ct-sidenav">
-                <li href="/logs" class="active ct-sidenav-active"><a href="/merchant/dashboard">Dashboard</a></li>
+                <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/dashboard*') ? 'active' : '' }}"><a href="/merchant/dashboard">Dashboard</a></li>
             </ul>
           </div>
 
           <!-- Show links for all groups -->
           <div class="ct-toc-item active">
             <a class="ct-toc-link">Managment</a>
-            <ul class="nav ct-sidenav">
-              <li href="/logs" class="ct-sidenav-active"><a href="/admin/merchants">Merchants</a></li>
+            <ul class="nav ct-sidenav ">
+              <li href="/logs" class="ct-sidenav-active {{ Request::is('admin/merchants*') ? 'active' : '' }}"><a href="/admin/merchants">Merchants</a></li>
             </ul>
           </div>
 
