@@ -46,9 +46,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        return view('merchant.show');
+        $order->load('customer', 'item');
+        return view('merchant.orders.show', compact('order'));
     }
 
     /**
