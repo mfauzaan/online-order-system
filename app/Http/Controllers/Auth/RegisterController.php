@@ -52,6 +52,10 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'address' => 'required',
+            'apartment_number' => 'required',
+            'city' => 'required',
+            'street_address' => 'required',
         ]);
     }
 
@@ -73,11 +77,11 @@ class RegisterController extends Controller
         $user->customer()->create([
             'full_name' => $data['name'],
             'mobile_number' => '955555',
-            'address' => 'a',
-            'apartment_number' => 'apartment_number',
-            'city' => 'city',
-            'street_address' => 'street_address',
-            'geo_coordinates' => 'geo_coordinates',
+            'address' => $data['address'],
+            'apartment_number' => $data['apartment_number'],
+            'city' => $data['city'],
+            'street_address' => $data['street_address'],
+            'geo_coordinates' => '-',
         ]);
 
         return $user;
