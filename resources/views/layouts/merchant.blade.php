@@ -60,35 +60,39 @@
 
   @section('main-container')
   <div class="container-fluid">
-    <div class="row flex-xl-nowrap">
-      <div class="col-12 col-md-3 col-xl-2 ct-sidebar">
-        <nav class="collapse ct-links" id="ct-docs-nav">
-          <!-- Show links for all groups -->
-          <div class="ct-toc-item active">
-            <ul class="nav ct-sidenav">
-                <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/dashboard*') ? 'active' : '' }}"><a href="/merchant/dashboard">Dashboard</a></li>
-            </ul>
-          </div>
-
-          <!-- Show links for all groups -->
-          <div class="ct-toc-item active">
-            <a class="ct-toc-link">Managment</a>
-            <ul class="nav ct-sidenav ">
-              <li href="/logs" class="ct-sidenav-active {{ Request::is('admin/merchants*') ? 'active' : '' }}"><a href="/admin/merchants">Merchants</a></li>
-              <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}">Items</a></li>
-              <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/orders*') ? 'active' : '' }}"><a href="{{ route('orders.index') }}">Orders</a></li>
-              <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/customers*') ? 'active' : '' }}"><a href="{{ route('customers.index') }}">Customers</a></li>
-            </ul>
-          </div>
-
-        </nav>
+      <div class="row flex-xl-nowrap">
+        @auth
+        <div class="col-12 col-md-3 col-xl-2 ct-sidebar">
+          <nav class="collapse ct-links" id="ct-docs-nav">
+            <!-- Show links for all groups -->
+            <div class="ct-toc-item active">
+              <ul class="nav ct-sidenav">
+                  <li class="ct-sidenav-active {{ Request::is('merchant/dashboard*') ? 'active' : '' }}"><a href="/merchant/dashboard">Dashboard</a></li>
+              </ul>
+            </div>
+  
+            <!-- Show links for all groups -->
+            <div class="ct-toc-item active">
+              <a class="ct-toc-link">Managment</a>
+              <ul class="nav ct-sidenav ">
+                @if (auth()->user()->type == 'Admin')
+                  <li class="ct-sidenav-active {{ Request::is('admin/merchants*') ? 'active' : '' }}"><a href="/admin/merchants">Merchants</a></li>
+                @else
+                <li class="ct-sidenav-active {{ Request::is('merchant/orders*') ? 'active' : '' }}"><a href="{{ route('orders.index') }}">Orders</a></li>
+                <li class="ct-sidenav-active {{ Request::is('merchant/items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}">Items</a></li>
+                <li class="ct-sidenav-active {{ Request::is('merchant/customers*') ? 'active' : '' }}"><a href="{{ route('customers.index') }}">Customers</a></li>
+                @endif
+              </ul>
+            </div>
+          </nav>
+        </div>
+        @endauth
+  
+        <main class="col-12 col-md-9 col-lg-10 py-md-3 pl-md-5 pr-md-5 ct-content" role="main">
+          @yield('content')
+        </main>
       </div>
-
-      <main class="col-12 col-md-9 col-lg-10 py-md-3 pl-md-5 pr-md-5 ct-content" role="main">
-        @yield('content')
-      </main>
     </div>
-  </div>
 @show
 
   <!-- Core -->
