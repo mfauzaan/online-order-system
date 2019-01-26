@@ -73,6 +73,7 @@
             <a class="ct-toc-link">Managment</a>
             <ul class="nav ct-sidenav ">
               <li href="/logs" class="ct-sidenav-active {{ Request::is('admin/merchants*') ? 'active' : '' }}"><a href="/admin/merchants">Merchants</a></li>
+              <li href="/logs" class="ct-sidenav-active {{ Request::is('merchant/items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}">Items</a></li>
             </ul>
           </div>
 
