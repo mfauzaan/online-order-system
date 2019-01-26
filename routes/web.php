@@ -41,7 +41,7 @@ Route::prefix('customer')->namespace('Customer')->group(function () {
  * Admin Routes
  */
 
-Route::prefix('admin')->namespace('Merchant')->group(function () {
+Route::prefix('admin')->namespace('Merchant')->name('merchant.')->group(function () {
     Route::resource('merchants', 'MerchantController');
 });
 
