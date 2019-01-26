@@ -11,12 +11,12 @@
             <h3 class="mb-0">Edit User</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ route('customers.index') }}" class="btn btn-sm btn-default">Back</a>
+            <a href="{{ route('merchant.customers.index') }}" class="btn btn-sm btn-default">Back</a>
           </div>
         </div>
       </div>
 
-      {{ Form::model($customer, ['route' => ['customers.update', $customer]]) }}
+      {{ Form::model($customer, ['route' => ['merchant.customers.update', $customer]]) }}
       {{ method_field('PATCH') }}
         @include('merchant.customers.form')
       {{ Form::close() }}

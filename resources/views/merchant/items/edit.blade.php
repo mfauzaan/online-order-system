@@ -11,12 +11,12 @@
             <h3 class="mb-0">Edit Items</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ route('items.index') }}" class="btn btn-sm btn-default">Back</a>
+            <a href="{{ route('merchant.items.index') }}" class="btn btn-sm btn-default">Back</a>
           </div>
         </div>
       </div>
 
-      {{ Form::model($item, ['route' => ['items.update', $item], 'enctype' => 'multipart/form-data']) }}
+      {{ Form::model($item, ['route' => ['merchant.items.update', $item], 'enctype' => 'multipart/form-data']) }}
       {{ method_field('PATCH') }}
         @include('merchant.items.form')
       {{ Form::close() }}

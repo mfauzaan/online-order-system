@@ -78,9 +78,9 @@
                 @if (auth()->user()->type == 'Admin')
                   <li class="ct-sidenav-active {{ Request::is('admin/merchants*') ? 'active' : '' }}"><a href="/admin/merchants">Merchants</a></li>
                 @else
-                <li class="ct-sidenav-active {{ Request::is('merchant/orders*') ? 'active' : '' }}"><a href="{{ route('orders.index') }}">Orders</a></li>
-                <li class="ct-sidenav-active {{ Request::is('merchant/items*') ? 'active' : '' }}"><a href="{{ route('items.index') }}">Items</a></li>
-                <li class="ct-sidenav-active {{ Request::is('merchant/customers*') ? 'active' : '' }}"><a href="{{ route('customers.index') }}">Customers</a></li>
+                <li class="ct-sidenav-active {{ Request::is('merchant/orders*') ? 'active' : '' }}"><a href="{{ route('merchant.orders.index') }}">Orders</a></li>
+                <li class="ct-sidenav-active {{ Request::is('merchant/items*') ? 'active' : '' }}"><a href="{{ route('merchant.items.index') }}">Items</a></li>
+                <li class="ct-sidenav-active {{ Request::is('merchant/customers*') ? 'active' : '' }}"><a href="{{ route('merchant.customers.index') }}">Customers</a></li>
                 @endif
               </ul>
             </div>

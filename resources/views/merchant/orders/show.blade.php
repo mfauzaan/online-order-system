@@ -11,7 +11,7 @@
             <h3 class="mb-0">Item - {{ $order->id }}</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ route('orders.index') }}" class="btn btn-sm btn-default">Back</a>
+            <a href="{{ route('merchant.orders.index') }}" class="btn btn-sm btn-default">Back</a>
           </div>
         </div>
       </div>

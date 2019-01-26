@@ -42,7 +42,7 @@
                   <span class="mb-0 text-sm">{{ $order->status }}</span>
               </td>
               <td>
-                <a href="{{ route('orders.show', $order) }}" class="btn btn-primary btn-sm mb-2 mt-2">Show Order</a>
+                <a href="{{ route('merchant.orders.show', $order) }}" class="btn btn-primary btn-sm mb-2 mt-2">Show Order</a>
               </td>
             </tr>
             @empty

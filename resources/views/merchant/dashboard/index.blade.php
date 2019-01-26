@@ -39,7 +39,7 @@
                 <h3 class="mb-0">Recent Orders</h3>
               </div>
               <div class="col text-right">
-                <a href="{{ route('orders.index') }}" class="btn btn-sm btn-primary">See all</a>
+                <a href="{{ route('merchant.orders.index') }}" class="btn btn-sm btn-primary">See all</a>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
                     </td>
                     <td>
                       {{ $order->created_at }}
-                      <a class="btn btn-sm btn-icon-only text-light" href="{{ route('orders.show', $order) }}"><i class="fa fa-ellipsis-v mt-2"></i></a>
+                      <a class="btn btn-sm btn-icon-only text-light" href="{{ route('merchant.orders.show', $order) }}"><i class="fa fa-ellipsis-v mt-2"></i></a>
                     </td>
                   </tr>
                 @empty
@@ -99,7 +99,7 @@
                 <h3 class="mb-0">Customers</h3>
               </div>
               <div class="col text-right">
-                <a href="{{ route('customers.index') }}" class="btn btn-sm btn-primary">See all</a>
+                <a href="{{ route('merchant.customers.index') }}" class="btn btn-sm btn-primary">See all</a>
               </div>
             </div>
           </div>

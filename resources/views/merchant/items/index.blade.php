@@ -11,7 +11,7 @@
             <h3 class="mb-0">Items</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ route('items.create') }}" class="btn btn-sm btn-default">Create New</a>
+            <a href="{{ route('merchant.items.create') }}" class="btn btn-sm btn-default">Create New</a>
           </div>
         </div>
       </div>
@@ -41,8 +41,8 @@
                   <span class="mb-0 text-sm">{{ $item->status }}</span>
                 </td>
               <td>
-                {{ Form::open(['route' => ['items.destroy', $item], 'method' => 'delete', 'id' => 'delete']) }}
-                <a href="{{ route('items.edit', $item) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
+                {{ Form::open(['route' => ['merchant.items.destroy', $item], 'method' => 'delete', 'id' => 'delete']) }}
+                <a href="{{ route('merchant.items.edit', $item) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
                 {{ Form::button('Delete', ['class' => 'btn btn-danger btn-sm delete-onclick mb-2" delete-onclick', 'type' => 'submit']) }}
                 {{ Form::close() }}
               </td>

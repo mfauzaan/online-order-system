@@ -1,4 +1,4 @@
-{{ Form::model($order, ['route' => ['orders.update', $order]]) }}
+{{ Form::model($order, ['route' => ['merchant.orders.update', $order]]) }}
 
 <div class="row pt-4">
     <div class="col-lg-3">
@@ -26,6 +26,6 @@
 
 <div class="card-footer py-4 bg-secondary">
     {{ Form::submit('Save Changes', ['class' => 'btn btn-success']) }}
-    <a href="{{ route('merchants.index') }}" class="btn btn-danger">Cancel</a>
+    <a href="{{ route('merchant.merchants.index') }}" class="btn btn-danger">Cancel</a>
 </div>
 {{ Form::close() }}

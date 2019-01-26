@@ -36,7 +36,7 @@
                 <span class="mb-0 text-sm">{{ $customer->mobile_number }}</span>
               </td>
               <td>
-                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
+                <a href="{{ route('merchant.customers.edit', $customer) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
               </td>
             </tr>
             @empty

@@ -71,5 +71,5 @@
 
 <div class="card-footer py-4 bg-secondary">
   {{ Form::submit('Create New', ['class' => 'btn btn-success']) }}
-  <a href="{{ route('merchants.index') }}" class="btn btn-danger">Cancel</a>
+  <a href="{{ route('merchant.merchants.index') }}" class="btn btn-danger">Cancel</a>
 </div>

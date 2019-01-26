@@ -11,12 +11,12 @@
             <h3 class="mb-0">Create Items</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ route('items.index') }}" class="btn btn-sm btn-default">Back</a>
+            <a href="{{ route('merchant.items.index') }}" class="btn btn-sm btn-default">Back</a>
           </div>
         </div>
       </div>
 
-      {!! Form::open(['route' => 'items.store', 'enctype' => 'multipart/form-data']) !!}
+      {!! Form::open(['route' => 'merchant.items.store', 'enctype' => 'multipart/form-data']) !!}
         @include('merchant.items.form')
       {!! Form::close() !!}
     </div>

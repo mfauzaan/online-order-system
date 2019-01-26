@@ -11,7 +11,7 @@
             <h3 class="mb-0">Merchants</h3>
           </div>
           <div class="col text-right">
-            <a href="{{ route('merchants.create') }}" class="btn btn-sm btn-default">Create New</a>
+            <a href="{{ route('merchant.merchants.create') }}" class="btn btn-sm btn-default">Create New</a>
           </div>
         </div>
       </div>
@@ -37,8 +37,8 @@
                 <span class="mb-0 text-sm">{{ $merchant->mobile_number }}</span>
               </td>
               <td>
-                {{ Form::open(['route' => ['merchants.destroy', $merchant], 'method' => 'delete', 'id' => 'delete']) }}
-                <a href="{{ route('merchants.edit', $merchant) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
+                {{ Form::open(['route' => ['merchant.merchants.destroy', $merchant], 'method' => 'delete', 'id' => 'delete']) }}
+                <a href="{{ route('merchant.merchants.edit', $merchant) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
                 {{ Form::button('Delete', ['class' => 'btn btn-danger btn-sm delete-onclick mb-2" delete-onclick', 'type' => 'submit']) }}
                 {{ Form::close() }}
                {{--  <form action="{{ route('merchants.destroy', { products_id, id: code.id, packages_id }) }}?_method=DELETE"
