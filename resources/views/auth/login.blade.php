@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.merchant')
 
 @section('main-container')
 <div class="d-flex h-100">

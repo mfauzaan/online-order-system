@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.merchant')
 
 @section('content')
 <div class="col-12 ct-content d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -90,7 +90,7 @@
                 <h3 class="mb-0">Recent Orders</h3>
               </div>
               <div class="col text-right">
-                <a href="/admin/transactions" class="btn btn-sm btn-primary">See all</a>
+                <a href="{{ route('orders.index') }}" class="btn btn-sm btn-primary">See all</a>
               </div>
             </div>
           </div>
@@ -123,13 +123,11 @@
                         <span class="badge badge-success">{{ $order->status }}</span>
                     </td>
                     <td>
-                      53 .ރ
+                      {{ $order->total_price }} .ރ
                     </td>
                     <td>
-                      13 Jan 2019 - 22:29
-                      <button class="btn btn-sm btn-icon-only text-light transaction-modal" id="4556" data-toggle="modal" data-target="#transactionModal">
-                        <i class="fa fa-ellipsis-v"></i>
-                      </button>
+                      {{ $order->created_at }}
+                      <a class="btn btn-sm btn-icon-only text-light" href="{{ route('orders.show', $order) }}"><i class="fa fa-ellipsis-v mt-2"></i></a>
                     </td>
                   </tr>
                 @empty
@@ -177,16 +175,6 @@
                   </td>
                   <td>
                   {{ $customer->full_name }}
-                  </td>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <span class="badge badge-dot mr-4">
-                          <i class="bg-danger"></i> 1
-                        </span>
-                        <a class="btn btn-sm btn-icon-only text-light" href="/merchant/products/10/packages/41/inventories">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                    </div>
                   </td>
                 </tr> 
                 @empty
@@ -251,7 +239,7 @@
                 </div>
                 <div class="col">
                   <div class="focused text-right">
-                    <a href="#" class="btn btn-primary ">View Profile</a>
+                    <a href="{{ route('orders.show', $order) }}" class="btn btn-primary ">View Profile</a>
                   </div>
                 </div>
               </div>

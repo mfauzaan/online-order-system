@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::prefix('merchant')->namespace('Merchant')->group(function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('items', 'ItemController');
+    Route::resource('orders', 'OrderController');
 });
 
 /*

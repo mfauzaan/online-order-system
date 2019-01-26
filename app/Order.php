@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     // Relationships
-    public function order() {
-        return $this->hasOne('App\Item', 'id', 'order_id');
+    public function item() {
+        return $this->belongsTo('App\Item');
     }
 }

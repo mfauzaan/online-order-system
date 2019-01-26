@@ -8,10 +8,7 @@
       <div class="card-header border-0">
         <div class="row align-items-center">
           <div class="col">
-            <h3 class="mb-0">Items</h3>
-          </div>
-          <div class="col text-right">
-            <a href="{{ route('items.create') }}" class="btn btn-sm btn-default">Create New</a>
+            <h3 class="mb-0">Orders</h3>
           </div>
         </div>
       </div>
@@ -19,37 +16,38 @@
         <table class="table align-items-center table-flush">
           <thead class="thead-light">
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
+            <th scope="col">Item</th>
             <th scope="col">Price</th>
+            <th scope="col">Payment Type</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            @forelse ($items as $item)
+            @forelse ($orders as $order)
            <tr>
               <th scope="row">
-                <span class="mb-0 text-sm">{{ $item->id }}</span>
+                <span class="mb-0 text-sm">{{ $order->id }}</span>
               </th>
               <th scope="row">
-                <span class="mb-0 text-sm">{{ $item->name }}</span>
+                <span class="mb-0 text-sm">{{ $order->item->name }}</span>
               </th>
               <td>
-                <span class="mb-0 text-sm">{{ $item->price }}</span>
+                <span class="mb-0 text-sm">{{ $order->total_price }}</span>
               </td>
               <td>
-                  <span class="mb-0 text-sm">{{ $item->status }}</span>
-                </td>
+                  <span class="mb-0 text-sm">{{ $order->payment_type }}</span>
+              </td>
               <td>
-                {{ Form::open(['route' => ['items.destroy', $item], 'method' => 'delete', 'id' => 'delete']) }}
-                <a href="{{ route('items.edit', $item) }}" class="btn btn-primary btn-sm mb-2 mt-2">Edit</a>
-                {{ Form::button('Delete', ['class' => 'btn btn-danger btn-sm delete-onclick mb-2" delete-onclick', 'type' => 'submit']) }}
-                {{ Form::close() }}
+                  <span class="mb-0 text-sm">{{ $order->status }}</span>
+              </td>
+              <td>
+                <a href="{{ route('orders.show', $order) }}" class="btn btn-primary btn-sm mb-2 mt-2">Show Order</a>
               </td>
             </tr>
             @empty
             <td colspan="6" style="padding-left: 5em">
-              <p>Oops! Items not found.</p>
+              <p>Oops! orders not found.</p>
             </td>
             @endforelse
           </tbody>
