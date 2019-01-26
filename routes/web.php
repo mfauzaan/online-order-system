@@ -28,11 +28,24 @@ Route::prefix('merchant')->namespace('Merchant')->group(function () {
 });
 
 /*
+ * Customer Routes
+ */
+Route::prefix('customer')->namespace('Customer')->group(function () {
+	Route::get('restaurants', 'RestaurantController@index')->name('restaurants');
+    Route::resource('items', 'ItemController');
+    Route::resource('orders', 'OrderController');
+});
+
+/*
  * Admin Routes
  */
 
 Route::prefix('admin')->namespace('Merchant')->group(function () {
     Route::resource('merchants', 'MerchantController');
+});
+
+Route::prefix('admin')->namespace('Customer')->group(function () {
+    Route::resource('customers', 'CustomerController');
 });
 
 
