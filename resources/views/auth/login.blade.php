@@ -25,7 +25,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
               </div>
-              <input class="form-control" placeholder="Email" type="email" name="email" value="">
+              <input class="form-control" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
             </div>
           </div>
           <div class="form-group">
@@ -38,6 +38,7 @@
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary my-4">Login</button>
+            <a class="btn btn-success my-4" href="{{ route('register') }}">Register</a>
           </div>
         </form>
       </div>
