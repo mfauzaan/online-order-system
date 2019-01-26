@@ -58,28 +58,9 @@
             </table>
           </div>
 
-          <div class="row pt-4">
-            <div class="col-lg-3">
-              <div class="form-group focused">
-                {{ Form::label('Status',null, ['class' => 'form-control-label']) }} @if (isset($item)) {{ Form::select('status', ['Publised' => 'Publised', 'Draft' => 'Draft'], null, ['class' => 'form-control form-control-alternative']) }} @else
-                {{ Form::select('status', ['Publised' => 'Publised', 'Draft' => 'Draft'], 'Publised', ['class' => 'form-control
-                form-control-alternative']) }} @endif
-              </div>
-            </div>
-          </div>
-          <!-- Address -->
-          <div class="pl-lg-4">
-            <div class="row">
-              <div class="col-md-8">
-              </div>
-            </div>
-          </div>
+          @include('merchant.orders.form')
         </div>
 
-        <div class="card-footer py-4 bg-secondary">
-          {{ Form::submit('Save Changes', ['class' => 'btn btn-success']) }}
-          <a href="{{ route('merchants.index') }}" class="btn btn-danger">Cancel</a>
-        </div>
 
       </div>
     </div>

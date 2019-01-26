@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','username', 'type'
     ];
 
     /**
@@ -31,5 +31,9 @@ class User extends Authenticatable
     /* Relationships */
     public function merchant() {
         return $this->hasOne('App\Merchant');
+    }
+
+    public function customer() {
+        return $this->hasOne('App\Customer');
     }
 }

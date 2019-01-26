@@ -49,8 +49,13 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        // Store Image
+        $file = $request->file('featured_image');
+        $file = $file->move(public_path('uploads'), $file->getClientOriginalName());
+
+        // Create Item
         $merchant = Merchant::where('user_id', Auth::user()->id)->first();
-        $merchant->items()->create($request->all());
+        $merchant->items()->create($request->except(['featured_image'])+['featured_image' => "/uploads/{$file->getFileName()}"]);
         return redirect(route('items.index'));
     }
 
@@ -85,7 +90,14 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        $item->update($request->all());
+        // Store Image
+        $file = $request->file('featured_image');
+        if ($file !== null) {
+            $file = $file->move(public_path('uploads'), $file->getClientOriginalName());
+            $item->update($request->except(['featured_image'])+['featured_image' => "/uploads/{$file->getFileName()}"]);
+        } else {
+            $item->update($request->except(['featured_image']));
+        }
 
         return redirect(route('items.index'));
     }

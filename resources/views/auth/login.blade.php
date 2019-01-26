@@ -25,7 +25,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
               </div>
-              <input class="form-control" placeholder="Email" type="email" name="email" value="">
+              <input class="form-control" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
             </div>
           </div>
           <div class="form-group">
@@ -47,8 +47,10 @@
         <a href="https://oos.com/" class="text-light">
           <small>© 2018 Online Order System.</small>
         </a>
-        <small></small>
       </div>
+      <div class="col-6 text-right">
+          <a class="text-light" href="{{ route('register') }}"><small>Create new account</small></a>
+        </div>
     </div>
   </div>
   </div>

@@ -58,7 +58,7 @@
         </table>
       </div>
       <div class="card-footer py-4">
-      @include('shared.paginations')
+          {{ $merchants->links() }}
       </div>
     </div>
   </div>

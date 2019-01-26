@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      {!! Form::open(['route' => 'items.store']) !!}
+      {!! Form::open(['route' => 'items.store', 'enctype' => 'multipart/form-data']) !!}
         @include('merchant.items.form')
       {!! Form::close() !!}
     </div>

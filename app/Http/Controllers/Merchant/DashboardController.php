@@ -33,6 +33,6 @@ class DashboardController extends Controller
         $orders_count = Order::count();
         $total_sales = Order::sum('total_price');
 
-        return view('merchant.dashboard.index', compact('orders', 'customers', '$customers_count', 'orders_count', 'total_sales'));
+        return view('merchant.dashboard.index', compact('orders', 'customers', 'customers_count', 'orders_count', 'total_sales'));
     }
 }

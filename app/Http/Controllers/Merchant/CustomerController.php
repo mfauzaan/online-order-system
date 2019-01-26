@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Merchant;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Order;
+use App\Customer;
 
-class OrderController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::orderBy('id', 'desc')->with('item')->paginate(15);
-        return view('merchant.orders.index', compact('orders'));
+        $customers = Customer::paginate(15);
+        return view('merchant.customers.index', compact('customers'));
     }
 
     /**
@@ -46,10 +46,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        $order->load('customer', 'item');
-        return view('merchant.orders.show', compact('order'));
+        //
     }
 
     /**
@@ -58,9 +57,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Customer $customer)
     {
-        //
+        return view('merchant.customers.edit', compact('customer'));
     }
 
     /**
@@ -70,10 +69,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Customer $customer)
     {
-        $order->update($request->all());
-        return redirect(route('orders.index'));
+        $customer->update($request->all());
+        return redirect(route('customers.index'));
     }
 
     /**
