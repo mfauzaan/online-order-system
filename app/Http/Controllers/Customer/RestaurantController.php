@@ -17,8 +17,7 @@ class RestaurantController extends Controller
     {
         // Query Required for Restaurants
         $restaurants =  Merchant::orderBy('name', 'mobile_number')->limit(50)->get();
-
-        return view('customer.restaurant', compact('restaurants'));
+        return view('customer.restaurants.index', compact('restaurants'));
     }
 
     /**

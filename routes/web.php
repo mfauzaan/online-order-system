@@ -32,7 +32,8 @@ Route::prefix('merchant')->namespace('Merchant')->name('merchant.')->group(funct
  * Customer Routes
  */
 Route::prefix('customer')->namespace('Customer')->group(function () {
-	Route::get('restaurants', 'RestaurantController@index')->name('restaurants');
+	Route::resource('restaurants', 'RestaurantController');
+	Route::resource('restaurants.items', 'ItemController');
     Route::get('history', 'HistoryController@index')->name('history');
 });
 

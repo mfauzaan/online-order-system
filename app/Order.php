@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['status'];
+    protected $fillable = ['status', 'merchant_id', 'customer_id', 'item_id', 'total_price','balance', 'delivery_type', 'payment_type'];
 
 
     // Relationships
