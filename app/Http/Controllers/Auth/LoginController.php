@@ -30,7 +30,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if(Auth::user()->type == 'User'){
-            return redirect(route('restaurants'));
+            return redirect(route('restaurants.index'));
         } else {
             return redirect(route('merchant.dashboard'));
         } 

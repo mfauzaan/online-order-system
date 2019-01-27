@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             if(Auth::user()->type == 'User'){
-                return redirect(route('restaurants'));
+                return redirect(route('restaurants.index'));
             } else {
                 return redirect(route('merchant.dashboard'));
             } 
