@@ -49,22 +49,26 @@
               <tbody>
                 @forelse ($orders as $order)
                 <tr>
-                  <th scope="row">
+                  <td>
                   {{ $order->id }}
-                  </th>
+                  </td>
                   <td>
                   {{ $order->merchant_id }}
                   </td>
+                  <td>
                   {{ $order->item_id }}
+                  </td>
                   <td>
                   {{ $order->total_price }}
                   </td>
+                  <td>
                   {{ $order->status }}
+                  </td>
                 </tr> 
                 @empty
                   <tr>
                     <th scope="row" colspan="6">
-                      Oops! There are no Restaurants.
+                      You have no orders.
                     </th>
                   </tr>
                 @endforelse
