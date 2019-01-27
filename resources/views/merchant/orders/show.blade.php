@@ -55,6 +55,10 @@
                   <td>{{ $order->payment_type }}</td>
                 </tr>
                 <tr>
+                  <td>Delivery Type</td>
+                  <td>{{ $order->delivery_type }}</td>
+                </tr>
+                <tr>
                   <td>Balance</td>
                   <td>{{ $order->balance }}</td>
                 </tr>
