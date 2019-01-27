@@ -40,10 +40,12 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col">ID</th>
+                  <th scope="col">Time</th>
                   <th scope="col">Restaurant</th>
                   <th scope="col">Item</th>
                   <th scope="col">Total Price</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,6 +53,9 @@
                 <tr>
                   <td>
                   {{ $order->id }}
+                  </td>
+                  <td>
+                    {{ $order->created_at }}
                   </td>
                   <td>
                   {{ $order->merchant_id }}
@@ -62,7 +67,10 @@
                   {{ $order->total_price }}
                   </td>
                   <td>
-                  {{ $order->status }}
+                    <span class="badge {{ $order->status == 'Pending' ? 'badge-danger' : 'badge-success' }}">{{ $order->status }}</span>
+                  </td>
+                  <td>
+                    <a href="{{ route('merchant.orders.show', $order) }}" class="btn btn-primary btn-sm mb-2 mt-2">Show Order</a>
                   </td>
                 </tr> 
                 @empty
