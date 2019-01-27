@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
 
-class OrderController extends Controller
+class HistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::orderBy('id', 'desc')->with('item')->paginate(15);
-        return view('merchant.orders.index', compact('orders'));
+        return "test";
+        $query = mysql_query("SELECT * FROM Orders WHERE customer_id=1");
+        $orders = query::orderBy('id', 'desc')->with('item')->paginate(15);
+        return view('customer.history.index', compact('orders'));
     }
 
     /**
