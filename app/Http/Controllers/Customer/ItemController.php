@@ -65,7 +65,7 @@ class ItemController extends Controller
             'payment_type' => 'Cash',
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Booked Successfully');
     }
 
     /**

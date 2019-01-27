@@ -17,6 +17,14 @@
         </div>
       </div>
 
+      @if (session('status'))
+      <div class="m-4">
+          <div class="alert alert-success">
+              {{ session('status') }}
+          </div>
+      </div>
+      @endif
+
       <div class="row px-3">
         @forelse ($restaurent->items as $item)
         <div class="card ml-4 mb-4" style="width: 18rem;">
