@@ -64,8 +64,8 @@
           <!-- Show links for all groups -->
           <div class="ct-toc-item active">
             <ul class="nav ct-sidenav ">
-              <li href="/logs" class="ct-sidenav-active {{ Request::is('admin/restaurants*') ? 'active' : '' }}"><a href="/customers/restaurants.index">Restaurants</a></li>
-              <li href="/logs" class="ct-sidenav-active {{ Request::is('customers/history*') ? 'active' : '' }}"><a href="/customers/history.index">History</a></li>
+              <li href="/logs" class="ct-sidenav-active {{ Request::is('admin/restaurants*') ? 'active' : '' }}"><a href="/customer/restaurants">Restaurants</a></li>
+              <li href="/logs" class="ct-sidenav-active {{ Request::is('customer/history*') ? 'active' : '' }}"><a href="/customer/history">History</a></li>
             </ul>
           </div>
 

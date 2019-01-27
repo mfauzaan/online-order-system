@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-12 ct-content d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
   <div class="ct-page-title">
-    <h1 class="ct-title mt-1">Restaurants</h1>
+    <h1 class="ct-title mt-1">Select a Restaurant</h1>
   </div>
   <div class="col-md-3">
 {{--     <form>

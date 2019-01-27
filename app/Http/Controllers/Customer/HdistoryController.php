@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers\Merchant;
 
-use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Customer;
-use Illuminate\Support\Facades\Auth;
+use App\Order;
 
 class HistoryController extends Controller
 {
@@ -16,10 +14,11 @@ class HistoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $customer = Customer::where('user_id', Auth::user()->id)->first();
-        $orders = Order::where('customer_id', $customer->id)->orderBy('id', 'desc')->with('item')->paginate(15);
-        return view('customer.history', compact('orders'));
+    {
+        return "test";
+        $query = mysql_query("SELECT * FROM Orders WHERE customer_id=1");
+        $orders = query::orderBy('id', 'desc')->with('item')->paginate(15);
+        return view('customer.history.index', compact('orders'));
     }
 
     /**
@@ -49,10 +48,10 @@ class HistoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        $order->load('id', 'merchant');
-        return view('customer.orders.show', compact('order'));
+        $order->load('customer', 'item');
+        return view('merchant.orders.show', compact('order'));
     }
 
     /**
