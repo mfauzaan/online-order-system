@@ -30,7 +30,6 @@
                 <h3 class="mb-0">History</h3>
               </div>
               <div class="col text-right">
-                <a href="/merchant/products/" class="btn btn-sm btn-primary">See all</a>
               </div>
             </div>
           </div>
@@ -45,7 +44,6 @@
                   <th scope="col">Item</th>
                   <th scope="col">Total Price</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,9 +66,6 @@
                   </td>
                   <td>
                     <span class="badge {{ $order->status == 'Pending' ? 'badge-danger' : 'badge-success' }}">{{ $order->status }}</span>
-                  </td>
-                  <td>
-                    <a href="{{ route('merchant.orders.show', $order) }}" class="btn btn-primary btn-sm mb-2 mt-2">Show Order</a>
                   </td>
                 </tr> 
                 @empty
