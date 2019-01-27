@@ -53,14 +53,15 @@ class ItemController extends Controller
     {
         // Find required items
         $customer = Customer::where('user_id', \Auth::user()->id)->first();
+        $item = Item::where('id', $request->item_id)->first();
 
         Order::create([
             'customer_id' => $customer->id,
             'merchant_id' => $restaurent,
             'item_id' => $request->item_id,
             'status' => 'Pending',
-            'total_price' => 200,
-            'balance' => 200,
+            'total_price' => $item->price,
+            'balance' => 0,
             'delivery_type' => 'Express',
             'payment_type' => 'Cash',
         ]);
