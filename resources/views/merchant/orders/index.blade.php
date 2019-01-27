@@ -17,6 +17,7 @@
           <thead class="thead-light">
             <th scope="col">ID</th>
             <th scope="col">Item</th>
+            <th scope="col">Time</th>
             <th scope="col">Price</th>
             <th scope="col">Payment Type</th>
             <th scope="col">Status</th>
@@ -32,6 +33,9 @@
               <th scope="row">
                 <span class="mb-0 text-sm">{{ $order->item->name }}</span>
               </th>
+              <td>
+                <span class="mb-0 text-sm">{{ $order->created_at }}</span>
+              </td>
               <td>
                 <span class="mb-0 text-sm">{{ $order->total_price }}</span>
               </td>
