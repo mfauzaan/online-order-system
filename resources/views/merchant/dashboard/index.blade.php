@@ -49,7 +49,7 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col">Order ID</th>
-                  <th scope="col">User ID</th>
+                  <th scope="col">Customer ID</th>
                   <th scope="col">Order</th>
                   <th scope="col">Status</th>
                   <th scope="col">Price</th>
@@ -63,7 +63,7 @@
                       {{ $order->id }}
                     </th>
                     <th scope="row">
-                      {{ $order->user_id }}
+                      {{ $order->customer_id }}
                     </th>
                     <td>
                       {{ $order->item->name }}
